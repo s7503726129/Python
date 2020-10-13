@@ -1,3 +1,5 @@
+# 내부 함수로 구현
+
 print("s : ")
 s = input()
 print("t : ")
