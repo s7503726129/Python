@@ -34,23 +34,21 @@ def fcmp(s, t):
     s = s
     t = t
 
-    if s[0] == '-':
-        for i in s:
-            if i.isnumeric() or i == '.' or i == '-':
-                cond = "NUM"
-            else:
-                cond = "STR"
-    else:
-        cond = "STR"
+    for i in s:
+        if 'a' <= i <= 'z':
+            return strcmp
+        elif 'A' <= i <= 'Z':
+            return strcmp
+        else:
+            cond = "NUM"
 
-    if t[0] == '-':
-        for i in t:
-            if i.isnumeric() or i == '.' or i == '-':
-                cond = "NUM"
-            else:
-                cond = "STR"
-    else:
-        cond = "STR"
+    for j in t:
+        if 'a' <= j <= 'z':
+            return strcmp
+        elif 'A' <= j <= 'Z':
+            return strcmp
+        else:
+            cond = "NUM"
 
     if cond == "NUM":
         return numcmp
